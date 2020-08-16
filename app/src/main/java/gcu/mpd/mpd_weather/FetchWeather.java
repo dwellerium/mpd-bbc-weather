@@ -27,7 +27,8 @@ public class FetchWeather extends AsyncTask<Void, Void, Boolean> {
     protected Boolean doInBackground(Void... voids) {
         try {
             InputStream inputStream = url.openConnection().getInputStream();
-            System.out.println(inputStream);
+            days = new WeatherParser(inputStream).parseFeed();
+            System.out.println(days.size());
             return true;
         } catch (IOException e) {
             e.printStackTrace();
