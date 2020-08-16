@@ -28,7 +28,10 @@ public class FetchWeather extends AsyncTask<Void, Void, Boolean> {
         try {
             InputStream inputStream = url.openConnection().getInputStream();
             days = new WeatherParser(inputStream).parseFeed();
-            System.out.println(days.size());
+            for (Day day: days
+                 ) {
+                System.out.println(day.toString());
+            }
             return true;
         } catch (IOException e) {
             e.printStackTrace();
