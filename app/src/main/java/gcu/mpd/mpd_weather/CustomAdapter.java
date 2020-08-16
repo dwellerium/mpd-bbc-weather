@@ -19,13 +19,14 @@ public class CustomAdapter extends ArrayAdapter<Day> implements View.OnClickList
         TextView title;
         TextView minTemp;
         TextView maxTemp;
+        TextView winDirection;
+        TextView winSpeed;
     }
 
     public CustomAdapter(ArrayList<Day> data, Context context) {
         super(context, R.layout.row_item, data);
         this.days = data;
         this.mContext=context;
-
     }
 
     @Override
@@ -51,6 +52,8 @@ public class CustomAdapter extends ArrayAdapter<Day> implements View.OnClickList
             viewHolder.title = (TextView) convertView.findViewById(R.id.title);
             viewHolder.minTemp = (TextView) convertView.findViewById(R.id.minTemp);
             viewHolder.maxTemp = (TextView) convertView.findViewById(R.id.maxTemp);
+            viewHolder.winDirection = (TextView) convertView.findViewById(R.id.winDirection);
+            viewHolder.winSpeed = (TextView) convertView.findViewById(R.id.winSpeed);
 
             result=convertView;
 
@@ -61,8 +64,11 @@ public class CustomAdapter extends ArrayAdapter<Day> implements View.OnClickList
         }
 
         viewHolder.title.setText(day.getTitle());
-        viewHolder.minTemp.setText(day.getMinTemp());
-        viewHolder.maxTemp.setText(day.getMaxTemp());
+        viewHolder.minTemp.setText("Min temp" + day.getMinTemp());
+        viewHolder.maxTemp.setText("Max temp" + day.getMaxTemp());
+        viewHolder.winDirection.setText("Win direction" + day.getWinDirection());
+        viewHolder.winSpeed.setText("Wind speed" + day.getWinSpeed());
+
         // Return the completed view to render on screen
         return convertView;
     }
