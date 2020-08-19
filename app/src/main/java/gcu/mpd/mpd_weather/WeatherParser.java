@@ -1,5 +1,8 @@
 package gcu.mpd.mpd_weather;
 
+//Dean Robertson
+//S1826626
+
 import android.util.Log;
 
 import org.xmlpull.v1.XmlPullParser;

@@ -1,5 +1,8 @@
 package gcu.mpd.mpd_weather;
 
+//Dean Robertson
+//S1826626
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;

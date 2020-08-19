@@ -1,5 +1,8 @@
 package gcu.mpd.mpd_weather;
 
+//Dean Robertson
+//S1826626
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.AsyncTask;
@@ -24,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView=(ListView)findViewById(R.id.list);
-        new FetchWeather("2643123").execute((Void) null);
+        new FetchWeather("2648579").execute((Void) null);
     }
 
     class FetchWeather extends AsyncTask<Void, Void, Boolean> {
